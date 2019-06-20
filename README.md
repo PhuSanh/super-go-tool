@@ -2,6 +2,7 @@
 - [x] Echo framework
 - [x] Mysql GORM
 - [x] Config env viper
+- [x] CLI 
 - [x] Migrate database
 - [x] Seed database
 - [x] Swagger
@@ -12,4 +13,4 @@
 - [x] Graylog
 - [x] Cron
 - [ ] Gitlab-ci
-- [ ] JWT
+- [x] JWT

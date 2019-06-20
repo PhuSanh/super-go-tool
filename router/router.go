@@ -30,12 +30,13 @@ func InitRouter() {
 	e.Any("/graphiql", echo.WrapHandler(graphiqlHandler))
 
 	apiGroup := e.Group("/api")
-	v1Group := apiGroup.Group("/v1")
 
 	authHandler := new(handler.AuthHandler)
-	v1Group.POST("/login", authHandler.Login)
-	v1Group.POST("/check", authHandler.Check)
+	apiGroup.POST("/login", authHandler.Login)
+	apiGroup.POST("/check", authHandler.Check)
 
+	v1Group := apiGroup.Group("/v1")
+	v1Group.Use(authHandler.AuthMiddleware)
 	userHandler := new(handler.UserHandler)
 	v1Group.GET("/users", userHandler.GetList)
 
