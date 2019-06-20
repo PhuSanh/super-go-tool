@@ -1,0 +1,39 @@
+basePath: '{{.BasePath}}'
+definitions:
+  handler.ResponseData:
+    properties:
+      data:
+        type: object
+      err:
+        type: integer
+      msg:
+        type: string
+    type: object
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: '{{.Description}}'
+  license: {}
+  title: '{{.Title}}'
+  version: '{{.Version}}'
+paths:
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: get users
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseData'
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ResponseData'
+            type: object
+      summary: List users
+swagger: "2.0"

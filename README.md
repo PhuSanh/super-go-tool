@@ -1,0 +1,15 @@
+## Features
+- [x] Echo framework
+- [x] Mysql GORM
+- [x] Config env viper
+- [x] Migrate database
+- [x] Seed database
+- [x] Swagger
+- [x] GraphQL
+- [x] Redis
+- [ ] Kafka
+- [ ] gRPC
+- [x] Graylog
+- [x] Cron
+- [ ] Gitlab-ci
+- [ ] JWT
